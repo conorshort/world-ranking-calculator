@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<title>Provisional World Ranking</title>
+{% if event_classes %}
+<ul>
+  {% for class_id in event_classes %}
+  <li>
+    <a
+      href="{{ url_for('class_ranking', event_id=event_id, class_id=class_id) }}"
+      >{{ class_id }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<h1>Invalid event id</h1>
+{% endif %}

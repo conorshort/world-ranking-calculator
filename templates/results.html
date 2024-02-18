@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<title>Provisional World Ranking</title>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+  crossorigin="anonymous"
+/>
+
+{% if results %}
+<ul>
+  <table class="table">
+    <th>
+      <td>Name</td>
+      <td>Time</td>
+      <td>IOF ID</td>
+      <td>Ranking points</td>
+    </th>
+    {% for result in results %}
+    <tr>
+      <td>{{ result["place"] }}</td>
+      <td>{{ result["name"] }}</td>
+      <td>{{ result["result_mins"] }}</td>
+      <td>{{ result["IOF ID"] }}</td>
+      <td>{{ result["rp"] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</ul>
+{% else %}
+<h1>Oops</h1>
+{% endif %}
